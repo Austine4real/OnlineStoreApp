@@ -1,0 +1,63 @@
+﻿@model RestaurantFrontend.Models.Address.Address
+
+@{
+    ViewData["Title"] = "Addresses";
+}
+
+<div>
+    <div class="d-flex justify-content-between mt-3 p-5">
+
+        <div style="width: 30%;">
+            @Html.Partial("_MyAccountLayout")
+        </div>
+
+        <div class="col-md-8">
+            <div class="card-header text-start p-3" style="background-color: #8c0303;">
+                <h1 class="h3 text-light">Edit Address</h1>
+            </div>
+            <div class="row row-cols-1 row-cols-md-1 g-4">
+                <div class="p-3">
+                    <form method="post" asp-controller="Address" asp-action="EditAddress">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <input asp-for="Street" type="text" class="form-control mt-3" placeholder="Street" id="inputDefault">
+                            <span asp-validation-for="Street" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="City" type="text" class="form-control mt-3" placeholder="City" id="inputDefault">
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="State" type="text" class="form-control mt-3" placeholder="State" id="inputDefault">
+                            <span asp-validation-for="State" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="PostalCode" type="text" class="form-control mt-3" placeholder="Postal Code" id="inputDefault">
+                            <span asp-validation-for="PostalCode" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="Country" type="text" class="form-control mt-3" placeholder="Country" id="inputDefault">
+                            <span asp-validation-for="Country" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-check mt-3">
+                            <input asp-for="IsShippingAddress" class="form-check-input mt-3" type="checkbox" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Check the box if this is your shipping address
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn mt-3 text-light" style="background-color: #8c0303;">Edit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

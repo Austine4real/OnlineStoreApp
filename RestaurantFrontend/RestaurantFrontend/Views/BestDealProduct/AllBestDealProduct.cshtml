@@ -1,0 +1,158 @@
+﻿@model IEnumerable<RestaurantFrontend.Models.Products.Products>
+
+@{
+    ViewData["Title"] = "Most Popular";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
+<link href="@Url.Content("~/css/BestDeal.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/css/Products.css")" rel="stylesheet" type="text/css" />
+
+<div class="d-flex justify-content-center">
+
+    <h1 id="popular">Best Deal</h1>
+</div>
+
+
+<div class="main-container" id="main-containerss">
+
+    <div class="filters">
+        <h4>Filter by</h4>
+        <hr />
+        <div class="filter-tab" id="toggleButton">
+            <p class="category">Category</p>
+
+            <p class="category-minus" id="signDiv">-</p>
+
+        </div>
+
+        <div class="filter-content" id="targetDiv">
+
+            <a asp-controller="BestDealProduct" asp-action="AllBestDealProduct" id="all"> All</a><br />
+
+            <a asp-controller="BestDealProduct" asp-action="VegetableBestDealProduct">Vegetables</a><br />
+            <a asp-controller="BestDealProduct" asp-action="FruitBestDealProduct"> Fruit</a><br />
+            <a asp-controller="BestDealProduct" asp-action="Meat_PoultryBestDealProduct">Meat & Poultry</a><br />
+            <a asp-controller="BestDealProduct" asp-action="Fish_SeafoodBestDealProduct"> Fish & Seafood</a><br />
+            <a asp-controller="BestDealProduct" asp-action="Dairy_EggsBestDealProduct"> Dairy & Eggs</a><br />
+            <a asp-controller="BestDealProduct" asp-action="BakeryBestDealProduct">Bakery</a><br />
+            <a asp-controller="BestDealProduct" asp-action="Pastas_GrainsBestDealProduct">Pastas & Grains</a><br />
+            <a asp-controller="BestDealProduct" asp-action="Cereals_SnacksBestDealProduct">Cereals & Snacks</a><br />
+            <a asp-controller="BestDealProduct" asp-action="TeaBestDealProduct">Tea</a><br />
+            <a asp-controller="BestDealProduct" asp-action="CoffeeBestDealProduct">Coffee</a><br />
+            <a asp-controller="BestDealProduct" asp-action="SoftDrinksBestDealProduct">Soft Drinks</a><br />
+            <a asp-controller="BestDealProduct" asp-action="BeersBestDealProduct">Beer</a><br />
+            <a asp-controller="BestDealProduct" asp-action="WineBestDealProduct">Wine</a><br />
+            <a asp-controller="BestDealProduct" asp-action="Home_KitchenBestDealProduct">Home & Kitchen</a><br />
+            <a asp-controller="BestDealProduct" asp-action="Cleaning_SuppliesBestDealProduct">Cleaning Supplies</a><br />
+            <a asp-controller="BestDealProduct" asp-action="Personal_HygieneBestDealProduct">Personal Hygiene</a><br />
+            <a asp-controller="BestDealProduct" asp-action="BabiesBestDealProduct">Babies</a><br />
+
+        </div>
+
+
+    </div>
+
+    <div class="row g-4 justify-content-start" style="width: 80%">
+
+
+        @Html.Partial("_AllProductsCard")
+
+
+    </div>
+</div>
+
+
+
+
+<script src="~/js/site.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    function togglediv() {
+        const targetdiv = document.getelementbyid("targetdiv");
+        const signdiv = document.getelementbyid("signdiv");
+
+
+        if (targetdiv.classlist.contains("hidden")) {
+            targetdiv.classlist.remove("hidden");
+            signdiv.innerhtml = "-";
+        } else {
+            targetdiv.classlist.add("hidden");
+            signdiv.innerhtml = "+";
+        }
+    }
+
+    const togglebutton = document.getelementbyid("togglebutton");
+    togglebutton.addeventlistener("click", togglediv);
+
+
+
+    function handledecrementclick(countelement) {
+        const currentcount = parseint(countelement.textcontent);
+        if (currentcount > 1) {
+            countelement.textcontent = currentcount - 1;
+        }
+        if (currentcount === 2) {
+            countelement.previouselementsibling.classlist.add('faded');
+        }
+    }
+
+    function handleincrementclick(countelement) {
+        const currentcount = parseint(countelement.textcontent);
+        countelement.textcontent = currentcount + 1;
+        if (currentcount === 1) {
+            countelement.previouselementsibling.classlist.remove('faded');
+        }
+    }
+
+
+    const countercontainers = document.queryselectorall('.counter-container');
+    countercontainers.foreach(container => {
+        const countelement = container.queryselector('.count');
+        const decrementbtn = container.queryselector('.decrementbtn');
+        const incrementbtn = container.queryselector('.incrementbtn');
+
+        decrementbtn.addeventlistener('click', function () {
+            handledecrementclick(countelement);
+        });
+
+        incrementbtn.addeventlistener('click', function () {
+            handleincrementclick(countelement);
+        });
+    });
+
+
+
+    function togglediv() {
+        const targetdiv = document.getelementbyid("targetdiv");
+        const signminus = document.getelementbyid("signminus");
+
+
+        if (targetdiv.classlist.contains("hidden")) {
+            targetdiv.classlist.remove("hidden");
+            signminus.innerhtml = "-";
+        } else {
+            targetdiv.classlist.add("hidden");
+            signminus.innerhtml = "+";
+        }
+    }
+
+    const togglebuttons = document.getelementbyid("togglebuttons");
+    togglebuttons.addeventlistener("click", togglediv);
+
+
+
+    defaultvalue =
+        rangeelem.max < rangeelem.min
+            ? rangeelem.min
+            : rangeelem.min + (rangeelem.max - rangeelem.min) / 2;
+
+</script>
+
+<script src="~/js/site.js"></script>
+
+

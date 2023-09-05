@@ -1,0 +1,154 @@
+﻿
+body {
+    font-family: Arial, sans-serif;
+}
+
+#main-containerss {
+    display: flex;
+    padding-left: 2rem;
+}
+
+#popular {
+    font-weight: 600;
+    margin-top: 2rem;
+    font-size: 5rem;
+    /*margin-left: 19rem;*/
+    margin-bottom: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sign {
+    display: flex;
+    border: solid 1px;
+    height: 2.5rem;
+    width: 6.7rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.plus {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    margin-top: 5.5px;
+}
+
+
+.one {
+    font-size: 1rem;
+    margin-left: 1.5rem;
+    margin-top: 8px;
+}
+
+.minus {
+    font-size: 1.5rem;
+    margin-left: 8px;
+    margin-top: 4px;
+}
+
+#most-popular:hover {
+    cursor: pointer;
+    background-color: brown;
+}
+
+/*.main-container {
+    display: flex;
+}
+*/
+.card-content {
+    display: flex;
+}
+
+.filters a {
+    white-space: nowrap;
+}
+
+.filters h4 {
+    margin-right: 7rem;
+    white-space: nowrap;
+}
+
+.filters {
+    padding-right: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.filter-tab {
+    display: flex;
+}
+
+
+.category {
+    margin-right: 40px;
+    cursor: pointer;
+}
+.price {
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+/*p {
+    margin-right: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}*/
+
+p {
+    margin-right: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#targetDiv a:hover {
+    color: #d7d3d3;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+h4 {
+    color: #000000;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: start;
+}
+
+#card-title {
+    margin-top: -3rem;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+#number {
+    margin-top: -3rem;
+    font-size: 15px;
+    margin-bottom: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.filter-content {
+    width: 20%;
+    height: 20%;
+}
+
+.filter-content a{
+    text-decoration: none;
+    color: #333 !important;
+}
+
+#all {
+    text-decoration: none;
+}
+
+
+.faded {
+    opacity: 0.5;
+}
+
+
+input {
+    margin: 0.4rem;
+}
